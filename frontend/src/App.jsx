@@ -25,6 +25,7 @@ import StudentAttendance from './pages/Student/Attendance';
 // Parent Pages
 import ParentDashboard from './pages/Parent/Dashboard';
 import ChildDetails from './pages/Parent/childDetails';
+import ClassStudents from './pages/Admin/ClassStudents';
 
 const App = () => {
   return (
@@ -37,8 +38,13 @@ const App = () => {
         <Route path="/admin/dashboard" element={
           <ProtectedRoute allowedRoles={['admin']}><AdminDashboard /></ProtectedRoute>
         } />
+        {/* <Route path="/admin/class/:classId" element={<ClassStudents />} /> */}
+
         <Route path="/admin/students" element={
           <ProtectedRoute allowedRoles={['admin']}><Students /></ProtectedRoute>
+        } />
+        <Route path="/admin/ClassStudents" element={
+          <ProtectedRoute allowedRoles={['admin']}><ClassStudents /></ProtectedRoute>
         } />
         <Route path="/admin/teachers" element={
           <ProtectedRoute allowedRoles={['admin']}><Teachers /></ProtectedRoute>
